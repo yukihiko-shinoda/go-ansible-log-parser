@@ -1,0 +1,48 @@
+ansible-playbook 2.9.25
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 2.7.18 (default, Jun 10 2021, 00:11:02) [GCC 7.3.1 20180712 (Red Hat 7.3.1-13)]
+Using /etc/ansible/ansible.cfg as config file
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+Skipping callback 'actionable', as we already have a stdout callback.
+Skipping callback 'counter_enabled', as we already have a stdout callback.
+Skipping callback 'debug', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'dense', as we already have a stdout callback.
+Skipping callback 'full_skip', as we already have a stdout callback.
+Skipping callback 'json', as we already have a stdout callback.
+Skipping callback 'minimal', as we already have a stdout callback.
+Skipping callback 'null', as we already have a stdout callback.
+Skipping callback 'oneline', as we already have a stdout callback.
+Skipping callback 'selective', as we already have a stdout callback.
+Skipping callback 'skippy', as we already have a stdout callback.
+Skipping callback 'stderr', as we already have a stdout callback.
+Skipping callback 'unixy', as we already have a stdout callback.
+Skipping callback 'yaml', as we already have a stdout callback.
+
+PLAYBOOK: playbook.yml **********************************************************************************************************************************************************************************************************
+1 plays in playbook.yml
+
+PLAY [localhost] ****************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+task path: /workspace/playbook.yml:1
+ok: [localhost]
+META: ran handlers
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+task path: /workspace/playbook.yml:3
+ok: [localhost] => {
+    "msg": "hello world"
+}
+
+TASK [file] *********************************************************************************************************************************************************************************************************************
+task path: /workspace/playbook.yml:5
+changed: [localhost] => {"changed": true, "dest": "/tmp/foo.conf", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "size": 0, "state": "file", "uid": 0}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

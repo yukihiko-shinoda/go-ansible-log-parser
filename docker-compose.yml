@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  go-ansible-log-parser:
+    build: .
+    image: futureys/go-ansible-log-parser:development
+    ports:
+      - 6060:6060
